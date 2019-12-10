@@ -1,0 +1,52 @@
+/* CSS rules to be applied to ControversialMain.html.*/
+/* define nav links header, no underline, no bullets or numbers*/
+#navLinks {
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    text-decoration: none;
+    padding: 3px;
+}
+
+/* Change colour of Dropdown menu */
+.dropdownCol {
+    background-color: darkgrey;
+}
+
+/* Style paragraph for top slogan*/
+#topPara {
+    text-align: center;
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bold;
+    border-color: black;
+    border: 2px solid;
+    border-radius: 4px;
+}
+
+/*Style the header for input details*/
+#formHeader {
+    background-color: grey;
+    color: black;
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: bold;
+    border-color: black;
+    border: 2px solid;
+    border-radius: 4px;
+}
+
+/* Styling for all buttons Login Register and Submit */
+.btn {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 4px;
+    background: grey;
+    float: none;
+    font-size: 15px;
+    font-weight: bold;
+}

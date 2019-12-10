@@ -1,0 +1,38 @@
+/* CSS rules to be applied to ControversialSales.html.*/
+/* Style the header */
+h1 {
+    font-size: 25px;
+}
+
+/* style the sales table headers*/
+.addTabheader {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid;
+}
+
+/* Style the discount animation zoom window */
+.animate-input {
+    transition: width 0.4s ease-in-out
+}
+
+.animate-input:focus {
+    width: 100% !important
+}
+
+.animate-zoom {
+    animation: animatezoom 0.6s
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}

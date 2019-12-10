@@ -1,0 +1,52 @@
+<!-- HTML Main for Cotroversial T Shirt Co using bootstarp -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Controversial T Shirts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- This script uses the external style sheet below-->
+    <!-- ControversialCommon.css is used for "home" button styling -->
+    <link rel="stylesheet" type="text/css" href="ControversialCommon.css">
+    <!-- ControversialAbout.css is used for paragraph and header styling-->
+    <link rel="stylesheet" type="text/css" href="ControversialAbout.css">
+</head>
+
+<body>
+    <div>
+        <img src="ControversialImages/logo.jpg" alt="example" class="img-thumbnail mx-auto d-block"
+            width="200" height="125">
+        <h1>About Us</h1>
+        <p style="font-weight: bold; background-color: CadetBlue;">
+            Controversial T Shirts was established in 2015 to create an
+            awareness of the consequences and the effect of Apartheid
+            in South Africa. Young (black) people born after 1994 know
+            very little about the history of South Africa. Born into a
+            democracy, they have very little understanding of what
+            their parents faced on a daily basis.</p>
+        <h2>Our Products</h2>
+        <div id="colDiv">
+            <P style="font-weight: bold;"> All our T shirts are
+                manufactured and printed in Cape Town. Our material is
+                100% woven cotton, sourced from suppliers in Bellville.
+                Our T shirts come in standard colours of White, Grey
+                and Black, In 180 , 160 and 140 grams material. T shirt
+                prints are done via screen printing and oven cured.</P>
+        </div>
+        <form class="text-center">
+            <input id="home" class="homeBtn" type="button" value="Home!"
+                onclick="closeWin()">
+        </form>
+    </div>
+    <script>
+    function closeWin() {
+        window.close();
+    }
+    </script>
+
+</html>

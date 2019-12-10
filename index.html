@@ -1,0 +1,154 @@
+<!-- HTML Main for Controversial T Shirt Co using bootstarp -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--The Title below has been commented out, as it displays in the first line of the    window after applying the slideup and down in ControversialMain.js. Not sure WHY? -->
+    <!--    <title>Controversial T Shirts</title>-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- This script uses the external style sheet ControversialMain.css -->
+    <link rel="stylesheet" type="text/css" href="ControversialMain.css">
+    <!-- The below script is common across all Controversial html pages -->
+    <link rel="stylesheet" type="text/css" href="ControversialCommon.css">
+    <!--Uses external javascript -->
+</head>
+
+<body>
+    <div class="container bg-secondary">
+        <!-- Setup of the navigation bar at top of screen-->
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!-- Navigation bar contains 5 links, Login and Register Btn-->
+            <ul id="navLinks" class="navbar-nav mx-auto">
+                <!-- navigation item 1 - About">-->
+                <li class="nav-item ">
+                    <a id="myAbout" class="nav-link" href="ControversialAbout.html"
+                        target="_blank">About Us</a>
+                </li>
+                <!-- navigation item 2 - Dropdown Catalogue">-->
+                <li class="nav-item dropdown">
+                    <a id="myCatalogue" class="nav-link dropdown-toggle"
+                        href="#" data-toggle="dropdown">Our Catalogues</a>
+                    <div class="dropdown-menu dropdownCol">
+                        <a class="dropdown-item" href="ControversialCatalogue.html"
+                            target="_blank">Apartheid Laws</a>
+                        <a id="csAlert1" class="dropdown-item" href="#">Apartheid
+                            Heroes</a>
+                    </div>
+                </li>
+                <!-- Navigation item 3 - Dropdown Menu of Customers with link to Web Sites-->
+                <li class="nav-item dropdown">
+                    <a id="myCustomers" class="nav-link dropdown-toggle"
+                        href="#" data-toggle="dropdown">Our Customers</a>
+                    <div class="dropdown-menu dropdownCol">
+                        <a class="dropdown-item" href="https://www.apartheidmuseum.org"
+                            target="_blank">Apartheid Museum</a>
+                        <a class="dropdown-item" href="http://www.districtsix.co.za/"
+                            target="_blank">District Six Museum</a>
+                        <a class="dropdown-item" href="http://www.iziko.org.za/"
+                            target="_blank">Izeko Museums</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <!-- navigation item 4 - Testimonial>-->
+                    <a id="myTestimonial" class="nav-link" href="ControversialTestimonial.html"
+                        target="_blank">Testimonial</a>
+                </li>
+                <li class="nav-item">
+                    <!-- navigation item 5 - Contact Details>-->
+                    <a class="nav-link" href="ControversialContact.html"
+                        target="_blank">Contact Us</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <!-- navigation Btn 1 - Login-->
+                    <a id="myLogin" href="#regForm" class="btn btn-success btn-lg">
+                        Login</a>
+                </li>
+                <li>
+                    <!-- navigation Btn 2 - Register-->
+                    <a id="myReg" href="#regForm" class="btn btn-primary btn-lg">
+                        Register</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!--- Setup bootstrap grid of 12 col for heading, 3x4 col for logo and images display -->
+    <div class="container bg-secondary">
+        <div class="row">
+            <div class="row">
+                <div class="col-4" style="text-align: right"><img src="ControversialImages/Gazette5.jpg"
+                        alt="example" class="img-thumbnail" width="200"
+                        height="100">
+                </div>
+                <div class="col-4"><img src="ControversialImages/logo.jpg"
+                        alt="example" class="img-thumbnail">
+                </div>
+                <div class="col-4" style="margin-top: 2px"><img src="ControversialImages/Back_no_5.jpg"
+                        alt="example" class="img-thumbnail" width="200"
+                        height="100">
+                </div>
+                <div class="col-12">
+                    <p id="topPara">We create T Shirts telling of the
+                        History, Heroes and Original Culture of
+                        Apartheid South Africa</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- setup a form to capture user details -->
+    <div id="regForm" class="container bg-white">
+        <h1 id="formHeader">Please enter your details below.</h1>
+        <form>
+            <div class="form-group row">
+                <!-- Setup for horizontal Email input-->
+                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail">
+                    <small id="emailHelp" class="form-text text-muted"><b>We'll
+                            never share your email with anyone else.</b></small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <!-- setup horizontal password input-->
+                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control required"
+                        id="inputPassword">
+                </div>
+            </div>
+            <div class="form-group row">
+                <!-- setup check box to remember password input-->
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input id="checkBox" class="form-check-input"
+                            type="checkbox">
+                        <label class="form-check-label" for="checkBox">
+                            Remember Me
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Login and Logout buttons -->
+            <div>
+                <div class="row">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-1">
+                        <button id="mySubmit" type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="ControversialMain.js"></script>
+
+</html>

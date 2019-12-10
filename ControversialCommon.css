@@ -1,0 +1,52 @@
+/* Standard css across all html - common in all html pages */
+/* Std background for all html */
+body {
+    background-image: url('ControversialImages/background.png');
+    background-position: center;
+    background-size: cover;
+    border: none;
+    border-style: solid;
+    border-color: black;
+}
+
+/* Std home button for all html*/
+.homeBtn,
+.saleBtn,
+.canBtn {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 4px;
+    background: grey;
+    float: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Change colour of home btn on hover */
+.homeBtn:hover {
+    color: white;
+    background-color: black;
+}
+
+/* style the add button for adding additional item to sale table*/
+.addBtn {
+    border: 1px solid black;
+    border-radius: 1px;
+    background: lightgrey;
+    float: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* apply different background colour on sales windows buttons*/
+.saleBtn:hover {
+    background: green;
+}
+
+.canBtn:hover {
+    background: red;
+}
+
+.addBtn:hover {
+    background: green;
+}

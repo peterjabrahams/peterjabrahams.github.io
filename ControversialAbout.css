@@ -1,0 +1,46 @@
+/* CSS rules to be applied to Controversial.html.*/
+/* set body width to 50% */
+body {
+    width: 50%;
+    margin: auto;
+}
+
+/*Style the header */
+h1,
+h2 {
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+}
+
+/* Set colour of division background  */
+div {
+    background-color: grey;
+}
+
+/* colour annimation on second paragraph of ControversialAbout*/
+#colDiv {
+    background: blue;
+    animation: colChng 3s infinite;
+}
+
+/* setup colour change on paragraph two */
+@keyframes colChng {
+    from {
+        background-color: lightblue;
+    }
+
+    to {
+        background-color: grey;
+    }
+}
+
+/* Style for about paragraphs */
+p {
+    text-align: center;
+    font-size: 15px;
+    padding: 15px 20px;
+    border: 2px solid;
+    border-radius: 4px;
+}

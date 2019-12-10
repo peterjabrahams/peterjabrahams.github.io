@@ -1,0 +1,442 @@
+<!-- HTML for Cotroversial T Shirt catalogue using bootstarp -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Controversial T Shirts Catalogue</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- This script uses the external style sheet below-->
+    <!-- ControversialCommon.css is used for "home" button styling -->
+    <link rel="stylesheet" type="text/css" href="ControversialCommon.css">
+    <link rel="stylesheet" type="text/css" href="ControversialCatalogue.css">
+</head>
+
+<body>
+    <!-- setup the header text and logo-->
+    <div class="container bg-secondary fixed-top">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-3" style="text-align: right"><img src="ControversialImages/logo.jpg"
+                    alt="example" width="250" height="70">
+            </div>
+            <div class="col-3">
+                <h1 style="margin-top: 1px; text-align: left;">Apartheid
+                    Laws Catalogue</h1>
+            </div>
+            <div class="col-1" style="margin-top: 5px; text-align: right;">
+                <img src="ControversialImages/shopcart-icon.png" alt="cart"
+                    width="80" height="60">
+            </div>
+            <div class="col-2">
+                <h1 id="totqty" style="margin-top: 20px; text-align: left;">In
+                    Cart = 0</h1><br>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+        <!-- setup a table of 5 rows of products for sale. Images show front and back of product-->
+        <div class="container catalogue-scroll-y catalogue-scrollbar">
+            <table class="table table-hover table-bordered table-dark"
+                style="margin-top:1px;">
+                <!--    <tbody>-->
+                <thead>
+                    <!--  table Row header -->
+                    <tr>
+                        <th scope="row">Product Code</th>
+                        <th> Description</th>
+                        <th> Price Ex Vat</th>
+                        <th> Details</th>
+                        <th> Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- description of first data row-->
+                    <tr>
+                        <td id="prod1">124536</td>
+                        <td id="desc1">Prevention of mixed marriages</td>
+                        <td id="prc1"> R137.50</td>
+                        <td>
+                            <form>
+                                <fieldset class="form-group">
+                                    <!-- setup radio buttons for Sizes-->
+                                    <div class="row">
+                                        <label class="col-form-label col-sm-2 pt-0">Size</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-check form-check-inline">
+                                                <input id="p1b1" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="small"
+                                                    checked>
+                                                <label class="form-check-label">
+                                                    S</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p1b2" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="medium">
+                                                <label class="form-check-label">
+                                                    M</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p1b3" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="large">
+                                                <label class="form-check-label">
+                                                    L</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p1b4" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="xlarge">
+                                                <label class="form-check-label">
+                                                    XL</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <form action="/action_page.php">
+                                <!-- Selection of colors -->
+                                <label>Colour</label>
+                                <select id="col1" name="colours" class="custom-select custom-select-sm">
+                                    <option selected>Select Colour</option>
+                                    <option value="White">White</option>
+                                    <option value="Grey">Grey</option>
+                                    <option value="Black">Black</option>
+                                </select>
+                                <!-- Enter of Quantity -->
+                                <label>Quantity</label>
+                                <input id="qty1" class="form-control form-control-sm"
+                                    type="Number" min="1" value=1><br>
+                                <!-- Add to shopping card button - no function yet -->
+                                <a id="btn1" href="#" class="btn btn-success btn-sm">Add
+                                    to Cart</a>
+                            </form>
+                        </td>
+                        <!-- Display the image with ability to expand for more info-->
+                        <td>
+                            <img src="ControversialImages/catalogue1black.jpg"
+                                alt="TshirtPic" usemap="#catmap1" class="tshirtPics invert">
+                            <map name="catmap1">
+                                <area shape="rect" coords="20,20,400,250"
+                                    alt="Catalogue" href="ControversialImages/catalogue1.jpg">
+                            </map>
+                        </td>
+                    </tr>
+                    <!-- 2nd table row -->
+                    <tr>
+                        <td id="prod2">124537</td>
+                        <td id="desc2">Immorality Amendment</td>
+                        <td id="prc2"> R137.50</td>
+                        <td>
+                            <form>
+                                <fieldset class="form-group">
+                                    <!-- setup radio buttons for Sizes-->
+                                    <div class="row">
+                                        <label class="col-form-label col-sm-2 pt-0">Size</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-check form-check-inline">
+                                                <input id="p2b1" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="small"
+                                                    checked>
+                                                <label class="form-check-label">
+                                                    S</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p2b2" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="medium">
+                                                <label class="form-check-label">
+                                                    M</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p2b3" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="large">
+                                                <label class="form-check-label">
+                                                    L</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p2b4" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="xlarge">
+                                                <label class="form-check-label">
+                                                    XL</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <form action="/action_page.php">
+                                <!-- Selection of colors -->
+                                <label>Colour</label>
+                                <select id="col2" name="colours" class="custom-select custom-select-sm">
+                                    <option selected>Select Colour</option>
+                                    <option value="White">White</option>
+                                    <option value="Grey">Grey</option>
+                                    <option value="Black">Black</option>
+                                </select>
+                                <!-- Enter of Quantity -->
+                                <label>Quantity</label>
+                                <input id="qty2" class="form-control form-control-sm"
+                                    type="Number" min="1" value=1><br>
+                                <!-- Add to shopping card button - no function yet -->
+                                <a id="btn2" href="#" class="btn btn-success btn-sm">Add
+                                    to Cart</a>
+                            </form>
+                        </td>
+                        <!-- Display the image with ability to expand for more info-->
+                        <td>
+                            <img src="ControversialImages/catalogue2grey.jpg"
+                                alt="TshirtPic" usemap="#catmap2" class="tshirtPics sepia">
+                            <map name="catmap2">
+                                <area shape="rect" coords="20,20,400,250"
+                                    alt="Catalogue" href="ControversialImages/catalogue2.jpg">
+                            </map>
+                        </td>
+                    </tr>
+                    <!-- 3rd table row -->
+                    <tr>
+                        <!-- third row header-->
+                        <td id="prod3">124538</td>
+                        <td id="desc3">Population Registration</td>
+                        <td id="prc3"> R137.50</td>
+                        <td>
+                            <form>
+                                <fieldset class="form-group">
+                                    <!-- setup radio buttons for Sizes-->
+                                    <div class="row">
+                                        <label class="col-form-label col-sm-2 pt-0">Size</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-check form-check-inline">
+                                                <input id="p3b1" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="small"
+                                                    checked>
+                                                <label class="form-check-label">
+                                                    S</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p3b2" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="medium">
+                                                <label class="form-check-label">
+                                                    M</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p3b3" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="large">
+                                                <label class="form-check-label">
+                                                    L</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p3b4" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="xlarge">
+                                                <label class="form-check-label">
+                                                    XL</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <form action="/action_page.php">
+                                <!-- Selection of colors -->
+                                <label>Colour</label>
+                                <select id="col3" name="colours" class="custom-select custom-select-sm">
+                                    <option selected>Select Colour</option>
+                                    <option value="White">White</option>
+                                    <option value="Grey">Grey</option>
+                                    <option value="Black">Black</option>
+                                </select>
+                                <!-- Enter of Quantity -->
+                                <label>Quantity</label>
+                                <input id="qty3" class="form-control form-control-sm"
+                                    type="Number" min="1" value=1><br>
+                                <!-- Add to shopping card button - no function yet -->
+                                <a id="btn3" href="#" class="btn btn-success btn-sm">Add
+                                    to Cart</a>
+                            </form>
+                        </td>
+                        <!-- Display the image with ability to expand for more info-->
+                        <td>
+                            <img src="ControversialImages/catalogue3white.jpg"
+                                alt="TshirtPic" usemap="#catmap3" class="tshirtPics greyscale">
+                            <map name="catmap3">
+                                <area shape="rect" coords="20,20,400,250"
+                                    alt="Catalogue" href="ControversialImages/catalogue3.jpg">
+                            </map>
+                        </td>
+                    </tr>
+                    <!-- 4th table row -->
+                    <tr>
+                        <!-- fourth row header-->
+                        <td id="prod4">124539</td>
+                        <td id="desc4">Group Areas</td>
+                        <td id="prc4"> R137.50</td>
+                        <td>
+                            <form>
+                                <fieldset class="form-group">
+                                    <!-- setup radio buttons for Sizes-->
+                                    <div class="row">
+                                        <label class="col-form-label col-sm-2 pt-0">Size</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-check form-check-inline">
+                                                <input id="p4b1" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="small"
+                                                    checked>
+                                                <label class="form-check-label"
+                                                    for="p4b1"> S</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p4b2" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="medium">
+                                                <label class="form-check-label"
+                                                    for="p4b2"> M</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p4b3" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="large">
+                                                <label class="form-check-label"
+                                                    for="p4b3"> L</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p4b4" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="xlarge">
+                                                <label class="form-check-label"
+                                                    for="p4b4"> XL</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <form action="/action_page.php">
+                                <!-- Selection of colors -->
+                                <label>Colour</label>
+                                <select id="col4" name="colours" class="custom-select custom-select-sm">
+                                    <option selected>Select Colour</option>
+                                    <option value="White">White</option>
+                                    <option value="Grey">Grey</option>
+                                    <option value="Black">Black</option>
+                                </select>
+                                <!-- Enter of Quantity -->
+                                <label>Quantity</label>
+                                <input id="qty4" class="form-control form-control-sm"
+                                    type="Number" min="1" value=1><br>
+                                <!-- Add to shopping card button - no function yet -->
+                                <a id="btn4" href="#" class="btn btn-success btn-sm">Add
+                                    to Cart</a>
+                            </form>
+                        </td>
+                        <!-- Display the image with ability to expand for more info-->
+                        <td>
+                            <img src="ControversialImages/catalogue4grey.jpg"
+                                alt="TshirtPic" usemap="#catmap4" class="tshirtPics">
+                            <map name="catmap4">
+                                <area shape="rect" coords="20,20,400,250"
+                                    alt="Catalogue" href="ControversialImages/catalogue4.jpg">
+                            </map>
+                        </td>
+                    </tr>
+                    <!-- 5th table row -->
+                    <tr>
+                        <td id="prod5">124540</td>
+                        <td id="desc5">Reservation of Separate
+                            Amenities</td>
+                        <td id="prc5"> R137.50</td>
+                        <td>
+                            <form>
+                                <fieldset class="form-group">
+                                    <!-- setup radio buttons for Sizes-->
+                                    <div class="row">
+                                        <label class="col-form-label col-sm-2 pt-0">Size</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-check form-check-inline">
+                                                <input id="p5b1" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="small"
+                                                    checked>
+                                                <label class="form-check-label">
+                                                    S</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p5b2" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="medium">
+                                                <label class="form-check-label">
+                                                    M</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p5b3" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="large">
+                                                <label class="form-check-label">
+                                                    L</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input id="p5b4" class="form-check-input"
+                                                    type="radio" name="gridRadios"
+                                                    value="xlarge">
+                                                <label class="form-check-label">
+                                                    XL</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <form action="/action_page.php">
+                                <!-- Selection of colors -->
+                                <label>Colour</label>
+                                <select id="col5" name="colours" class="custom-select custom-select-sm">
+                                    <option selected>Select Colour</option>
+                                    <option value="White">White</option>
+                                    <option value="Grey">Grey</option>
+                                    <option value="Black">Black</option>
+                                </select>
+                                <!-- Enter of Quantity -->
+                                <label>Quantity</label>
+                                <input id="qty5" class="form-control form-control-sm"
+                                    type="Number" min="1" value=1><br>
+                                <!-- Add to shopping card button - no function yet -->
+                                <a id="btn5" href="#" class="btn btn-success btn-sm">Add
+                                    to Cart</a>
+                            </form>
+                        </td>
+                        <!-- Display image with ability to expand for more info-->
+                        <td>
+                            <img src="ControversialImages/catalogue5black.jpg"
+                                alt="TshirtPic" usemap="#catmap5" class="tshirtPics">
+                            <map name="catmap5">
+                                <area shape="rect" coords="20,20,400,250"
+                                    alt="Catalogue" href="ControversialImages/catalogue5.jpg">
+                            </map>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container bg-secondary fixed-bottom">
+        <div class="row">
+            <input id="closeWin" class="homeBtn btn mx-auto d-block"
+                type="button" value="  Home!  ">
+            <input id="openWin" class="homeBtn btn mx-auto d-block"
+                type="button" value="View Cart">
+        </div>
+    </div>
+</body>
+<!--Uses external javascript -->
+<script src="ControversialCatalogue.js"></script>
+
+</html>

@@ -1,0 +1,232 @@
+<!-- HTML FOR Controversial Sales -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- set a title for the page -->
+<title>Controversail Sales Invoice</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- This script uses the external style sheet below-->
+<!-- ControversialCommon.css is used for "home" button styling -->
+<link rel="stylesheet" type="text/css" href="ControversialCommon.css">
+<link rel="stylesheet" type="text/css" href="ControversialSales.css">
+<!-- uses external Javascript musiccatalogue.js -->
+<script src="ControversialSales.js"></script>
+
+<body onload="loadSales()">
+    <div class="container bg-secondary fixed-top">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-3" style="text-align: right"><img src="ControversialImages/logo.jpg"
+                    alt="example" width="250" height="70">
+            </div>
+            <div class="col-3">
+                <h1 style="margin-top: 1px; text-align: left;">Controversial
+                    T Shirts Sales Invoice</h1>
+            </div>
+            <div class="col-1" style="margin-top: 5px; text-align: right;">
+                <img src="ControversialImages/shopcart-icon.png" alt="cart"
+                    width="80" height="60">
+            </div>
+            <div class="col-2">
+                <h1 id="totqty" style="margin-top: 20px; text-align: left;">In
+                    Cart = 0</h1><br>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <div class="row">
+            <!-- Division to add additional product to sales -->
+            <table id="addProduct" style="margin-left: 180px; width:100%">
+                <tr>
+                    <th class="addTabheader" style="width:300px">Description</th>
+                    <th class="addTabheader" style="width:100px">Product</th>
+                    <th class="addTabheader" style="width:100px">Colour</th>
+                    <th class="addTabheader" style="width:80px">Size</th>
+                    <th class="addTabheader" style="width:100px">Unit
+                        Price</th>
+                    <th class="addTabheader" style="width:80px">Quantity</th>
+                    <!-- No header for the add button -->
+                    <th> </th>
+                </tr>
+                <tr>
+                    <td><select id="descript" style="width:300px"
+                            onchange="getProd()">
+                            <option class="opDesc" value="select">select</option>
+                            <option class="opDesc">Prevention of mixed
+                                marriages</option>
+                            <option class="opDesc">Immorality Amendment</option>
+                            <option class="opDesc">Population
+                                Registration</option>
+                            <option class="opDesc">Group Areas</option>
+                            <option class="opDesc">Reservation of
+                                Separate Amenities</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="product" id="product"
+                            style="width: 100px" disabled></td>
+                    <td><select id="colour" style="width:100px">
+                            <option class="opCol" value="White">White</option>
+                            <option class="opCol" value="Grey">Grey</option>
+                            <option class="opCol" value="Black">Black</option>
+                        </select>
+                    </td>
+                    <td><select id="size">
+                            <option class="opSiz" value="Small">Small</option>
+                            <option class="opSiz" value="Medium">Medium</option>
+                            <option class="opSiz" value="Large">Large</option>
+                            <option class="opSiz" value="X Large">X
+                                Large</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="unit Price" id="price"
+                            style="width: 100px" value="R137.50"
+                            disabled></td>
+                    <td><input id="qty" type="Number" style="width: 80px; text-align: center;"
+                            min="1" value=1></td>
+                    <!-- create button for storing music info -->
+                    <td><button id="addBtn" class="addBtn" onclick="addSale()">Add
+                            to Cart</button></td>
+                </tr>
+            </table>
+            <div class="row">
+                <hr>
+            </div>
+        </div>
+    </div>
+    <!-- create a division for displaying the sales table data -->
+    <div id="salesList" class="container bg-secondary" style="margin-top: 180px">
+    </div>
+    <!-- Buttons to view product items and check out-->
+    <div class="container bg-secondary">
+        <div class="row">
+            <input id="showImg" onclick="showProd()" class="homeBtn btn mx-auto d-block"
+                style="margin-top: 5px; margin-bottom: 5px;" type="button"
+                value="Show Product">
+            <input id="openWin" class="saleBtn btn mx-auto d-block"
+                style="margin-top: 5px; margin-bottom: 5px;" type="button"
+                value="Check Out" onclick="checkOut()">
+        </div>
+    </div>
+    <!-- Display product image in dialogue window -->
+    <!-- Not supported in Explorer -->
+    <dialog id="prodImg">
+        <form id="form1">
+            <h3 id="actHeader" style="text-align: center"></h3>
+            <img id="prodPic"><br>
+            <button class="homeBtn" style="margin-left: 160px;" value="cancel">Hide</button><br>
+        </form>
+    </dialog>
+    <!-- Dialog for discount window -->
+    <dialog id="discount" class="container bg-secondary animate-zoom"
+        style="position: absolute;">
+        <form id="form2">
+            <h2 style="text-align: center">Congratulations !!!</h2>
+            <p style="text-align: center; color: white">You Qualify for
+                Our first time customer discount</p>
+            <p style="text-align: center; color: white">Claim your 15%
+                discount Now!</p>
+            <input type="button" class="saleBtn" style="margin-left: 300px; text-align: center;"
+                value="Activate Your Discount" onclick="claimDiscount()">
+            <input type="button" class="canBtn" style="margin-left: 240px; text-align: center"
+                value="Cancel X" onclick="cancelDisc()">
+        </form>
+    </dialog>
+    <dialog id="deliveryMeth" style="position: absolute;">
+        <form id="delMethod">
+            <h3 style="text-align: center">Collect or Deliver</h3>
+            <div class="form-check form-check-inline radio">
+                <input id="collect" class="form-check-input" style="margin-left: 60px;"
+                    type="radio" name="gridRadios" value="collect"
+                    checked>
+                <label class="form-check-label">Collect</label>
+            </div><br>
+            <div class="form-check form-check-inline radio">
+                <input id="deliver" class="form-check-input" style="margin-left: 60px;"
+                    type="radio" name="gridRadios" value="deliver">
+                <label class="form-check-label">Deliver</label>
+            </div><br>
+            <input type="button" class="saleBtn" style="margin-left: 40px; text-align: center"
+                onclick="confirmMethod()" value="Confirm">
+            <input type="button" class="canBtn" style="margin-left: 70px; text-align: center"
+                value="Cancel" onclick="cancelDel()">
+        </form>
+    </dialog>
+    <dialog id="deliveryOption" style="position: absolute">
+        <form id="delOpt">
+            <h3 style="text-align: center">Select Delivery Option</h3>
+            <div class="form-check form-check-inline">
+                <input id="express" class="form-check-input" style="margin-left: 40px;"
+                    type="radio" name="gridRadios" value="Express"
+                    checked>
+                <label class="form-check-label">Express Delivery (24
+                    hours) R275.00 per Order Incl</label>
+            </div><br>
+            <div class="form-check form-check-inline">
+                <input id="normal" class="form-check-input" style="margin-left: 40px;"
+                    type="radio" name="gridRadios" value="deliver">
+                <label class="form-check-label">Normal Delivery (5 work
+                    days) R125.00 per Order Incl</label>
+            </div><br>
+            <input type="button" class="saleBtn" style="margin-left: 60px; text-align: center"
+                onclick="confirmOption()" value="Confirm">
+            <input type="button" class="canBtn" style="margin-left: 160px; text-align: center"
+                value="Cancel" onclick="cancelOption()">
+        </form>
+    </dialog>
+    <!-- capture address -->
+    <dialog id="deladdress" style="position: absolute">
+        <form id="deladd">
+            <h3 style="text-align: center">Deliver Address</h3>
+            <div>
+                <input id="strno" style="margin-left: 60px; margin-right: 60px;"
+                    type="number" name="strno" placeholder="Street No"
+                    required><br>
+                <input id="strname" style="margin-left: 60px; margin-right: 60px;"
+                    type="text" name="streetname" placeholder="Street Name"
+                    required><br>
+                <input id="suburb" style="margin-left: 60px; margin-right: 60px;"
+                    type="text" name="suburb" placeholder="Suburb"
+                    required><br>
+                <input id="city" style="margin-left: 60px; margin-right: 60px;"
+                    type="text" name="city" placeholder="City" required><br>
+                <input id="pcode" style="margin-left: 60px; margin-right: 60px;"
+                    type="number" name="pcode" placeholder="Postal Code"
+                    required><br>
+            </div><br>
+            <input type="button" class="saleBtn" style="margin-left: 60px; text-align: center;"
+                onclick="confirmOrder()" value="Confirm">
+            <input type="button" class="canBtn" style="margin-left: 20px; text-align: center"
+                value="Cancel" onclick="cancelAddr()">
+        </form>
+    </dialog>
+    <!-- Dialog for confirming order collection or delivery -->
+    <dialog id="confirmOrd" class="bg-secondary animate-zoom" style="position: absolute;">
+        <form id="collectf">
+            <h3 style="text-align: center">Order Confirmation</h3>
+            <p id="delMessage" style="text-align: center; color: white">Your
+                order will be ready for collection within 24 hours</p>
+            <p style="text-align: center; color: white">ON CONFIRMATION
+                OF PAYMENT!!!</p>
+            <div id="invlist">
+            </div>
+            <h3 id=OrdNumber></h3>
+            <input type="button" class="saleBtn" style="margin-left: 60px; text-align: center;"
+                onclick="closeOrd()" value="Finalise Order">
+            <input type="button" class="canBtn" style="margin-left: 60px; text-align: center"
+                onclick="cancelCol()" value="Cancel">
+        </form>
+    </dialog>
+    <!-- final window-->
+    <dialog id="finalwindow" style="position: absolute;">
+        <form>
+            <h3 style="text-align: center">THANK YOU FOR YOUR PURCHASE</h3>
+            <h3 style="text-align: center">FROM ALL OF US AT
+                CONTROVERSIAL T SHIRTS</h3>
+        </form>
+    </dialog>
+</body>
+
+</html>
